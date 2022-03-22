@@ -6,9 +6,9 @@ export default class Menu extends Component {
       <nav>
           <div>Logo</div>
           <ul>
-              <a className='activo'>Inicio</a>
-              <a>Ventas</a>
-              <a>Soporte</a>
+              <a href={'.'} className='activo'>Inicio</a>
+              <a href={'.'}>Ventas</a>
+              <a href={'.'}>Soporte</a>
           </ul>
       </nav>
     )

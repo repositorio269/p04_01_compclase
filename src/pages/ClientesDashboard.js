@@ -4,6 +4,16 @@ export default class ClientesDashboard extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            isShowHelp: false
+        }
+        // this.handleShowHelp = this.handleShowHelp.bind(this);
+    }
+
+    handleShowHelp() {
+        this.setState(prevState => {
+            return {isShowHelp: !prevState.isShowHelp}
+        })
     }
 
     render() {
@@ -28,7 +38,21 @@ export default class ClientesDashboard extends Component {
                         })}
                     </tbody>
                 </table>
+                {this.state.isShowHelp ? 
+                    <>
+                        <button  onClick={() => this.handleShowHelp()}>Ocultar ayuda</button>
+                        <div className="help">
+                            <p>Lorem ipsum dolor sit amet consectetur...</p>
+                        </div>
+                    </>
+                    :
+                    <button onClick={() => this.handleShowHelp()}>Ver ayuda</button>
+                }
             </div>
         )
     }
 }
+
+// React.createElement("button", {
+//     onClick: this.handleShowHelp()
+// })
