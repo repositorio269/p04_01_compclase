@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Menu from './components/Menu';
+import ClientesDashboard from './pages/ClientesDashboard';
 
 class App extends Component {
 
@@ -7,9 +8,7 @@ class App extends Component {
     return (
       <>
         <Menu />
-        <div className='container'>
-          <h1>Bienvenidos</h1>
-        </div>
+        <ClientesDashboard />
       </>
     )
   }
