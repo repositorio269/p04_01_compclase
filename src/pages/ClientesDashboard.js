@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 
 export default class ClientesDashboard extends Component {
 
-    clientes = [
-        { nombre: 'Gas Natural', cif: 'A12345678' },
-        { nombre: 'Iberdrola', cif: 'A87654321' },
-        { nombre: 'Jazztel', cif: 'B12345678' },
-        { nombre: 'BBVA', cif: 'C12345678' },
-    ]
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
             <div className='container'>
+                <h1>{this.props.titulo}</h1>
                 <table>
                     <thead>
                         <tr>
@@ -20,9 +18,9 @@ export default class ClientesDashboard extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.clientes.map(cliente => {
+                        {this.props.clientes.map(cliente => {
                             return (
-                                <tr>
+                                <tr key={cliente.cif}>
                                     <td>{cliente.nombre}</td>
                                     <td>{cliente.cif}</td>
                                 </tr>
